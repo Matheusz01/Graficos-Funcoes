@@ -1,0 +1,26 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+def L(x):
+    return -100*x**2 + 1000*x - 1900
+
+# Intervalo de x para o gráfico
+x = np.linspace(0, 10, 100)
+
+# Valores correspondentes de L(x)
+y = L(x)
+
+# Encontrando o ponto máximo
+max_index = np.argmax(y)
+x_max = x[max_index]
+y_max = y[max_index]
+
+# Plotando o gráfico
+plt.plot(x, y, label='L(x)=-100x²+1000x-1900')
+plt.scatter(x_max, y_max, color='red', label=f'Máximo ({x_max:.2f}, {y_max:.2f})')
+plt.xlabel('Unidades Vendidas (x)')
+plt.ylabel('Lucro Diário (L)')
+plt.legend()
+plt.title('Gráfico do Lucro Diário')
+plt.grid(True)
+plt.show()
